@@ -1,3 +1,6 @@
+# routing segging
+## http//localhost:8080/login to http://localhost:7080/auth
+## http//localhost:8080/register to http://localhost:7080/register
 spring:
   cloud:
     gateway:
@@ -5,10 +8,10 @@ spring:
         - id: login
           uri: http://localhost:7080
           predicates:
-            - Path=/v1/login
+            - Path=/login
           filters:
-            - SetPath=/v1/login
+            - SetPath=/auth
         - id: register
           uri: http://localhost:7080
           predicates:
-            - Path=/v1/register
+            - Path=/register
