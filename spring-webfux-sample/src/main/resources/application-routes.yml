@@ -1,0 +1,14 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: login
+          uri: http://localhost:7080
+          predicates:
+            - Path=/v1/login
+          filters:
+            - SetPath=/v1/login
+        - id: register
+          uri: http://localhost:7080
+          predicates:
+            - Path=/v1/register
